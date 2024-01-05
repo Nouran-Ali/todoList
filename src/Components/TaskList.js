@@ -6,7 +6,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { removeTask, editTask } from '../features/taskSlice';
 import { completeTask } from '../features/taskSlice';
 
-const Task_list = ({ tasks }) => {
+const TasList = ({ tasks }) => {
     const searchedTitle = useSelector(state => state.tasks.searchedTitle);
     const serchedTasks = useSelector(state => state.tasks.searchedList);
     const mapingTasks = searchedTitle ? serchedTasks : tasks
@@ -104,4 +104,4 @@ const Task_list = ({ tasks }) => {
     )
 }
 
-export default Task_list
+export default TasList

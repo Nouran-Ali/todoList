@@ -42,6 +42,8 @@ const Navbar = () => {
         dispatch(searchTask())
     };
 
+    const mediaQuery = window.matchMedia('(max-width: 1280px)');
+
 
     return (
         <div className='grid grid-cols-3 max-xl:grid-cols-1 gap-10 pt-7 pb-7 flex items-center'>
@@ -49,19 +51,19 @@ const Navbar = () => {
                 <img src="logo.png" width={40} height={200} className='' alt="logo" />
                 <h2 className='ml-2 text-2xl font-semibold text-[#010f2e]'>TodoList</h2>
             </div>
-            <div className='col-span-2 flex justify-between items-center'>
+            <div className='col-span-2 flex justify-between items-center max-xl:block'>
                 <Search
                     size="large"
                     placeholder="Search..."
                     allowClear
                     onSearch={onSearch}
                     style={{
-                        width: 570,
+                        width: mediaQuery.matches ? 300 : 570
                     }}
                     className='search'
                 />
 
-                <button onClick={showModal} className='btn_add text-white rounded-lg p-2 px-5'>
+                <button onClick={showModal} className='btn_add text-white rounded-lg p-2 px-5 max-xl:mt-5'>
                     <PlusCircleOutlined className='mr-2' /> Add Task
                 </button>
                 <Modal title="Today task" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}
