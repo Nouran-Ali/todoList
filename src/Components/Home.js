@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
-import Task_list from './TaskList';
+import TaskList from './TaskList';
 import { selectTasks, setTaskList } from '../features/taskSlice';
 
 const Home = () => {
@@ -19,7 +19,7 @@ const Home = () => {
     return (
         <div className='scrollStyle'>
             {
-                tasks != 0 ? <Task_list tasks={tasks} /> :
+                tasks != 0 ? <TaskList tasks={tasks} /> :
                     <div className='flex justify-center items-center mt-20 max-xl:mt-3'>
                         <div>
                             <dotlottie-player
